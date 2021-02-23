@@ -14,19 +14,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fengyr.springLearn.mybatis.mapper;
+package com.fengyr.springLearn;
 
 import java.util.List;
 
-import com.fengyr.springLearn.mybatis.entity.MybatisDemoUser;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-/**
- * 指定这是一个操作数据库的mapper
- *
- * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
- */
-@Mapper
-public interface MybatisDemoUserMapper {
-    List<MybatisDemoUser> findAll();
+import com.fengyr.springLearn.mybatis.entity.MybatisDemoUser;
+
+@RestController
+@RequestMapping("/usermybatis")
+public class MybatisDemoUserController {
+
+//    @Autowired
+    private MybatisDemoUserMapper mybatisDemoUserMapper;
+
+    // http://127.0.0.1:8080/usermybatis/findAll
+    @RequestMapping("/findAll")
+    public List<MybatisDemoUser> findAll(){
+        return mybatisDemoUserMapper.findAll();
+    }
+
 }

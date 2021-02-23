@@ -14,16 +14,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fengyr.springLearn.mybatis.config;
+package com.fengyr.springLearn;
 
-import org.mybatis.spring.annotation.MapperScan;
+import java.util.List;
+
+import com.fengyr.springLearn.mybatis.entity.MybatisDemoUser;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
- * 使用MapperScan批量扫描所有的Mapper接口
+ * 指定这是一个操作数据库的mapper
  *
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
-@MapperScan("com.fengyr.springLearn.mybatis")
-public class MybatisDemoConfig {
-
+@Mapper
+public interface MybatisDemoUserMapper {
+    List<MybatisDemoUser> findAll();
 }

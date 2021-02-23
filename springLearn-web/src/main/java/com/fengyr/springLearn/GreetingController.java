@@ -1,4 +1,4 @@
-package com.fengyr.springLearn.controller;
+package com.fengyr.springLearn;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fengyr.springLearn.demos.web;
+package com.fengyr.springLearn;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

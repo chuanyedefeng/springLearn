@@ -14,23 +14,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fengyr.springLearn.mybatis.mapper;
+package com.fengyr.springLearn;
 
-import com.fengyr.springLearn.mybatis.entity.MVCMybatisDemoUser;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import org.apache.ibatis.annotations.Mapper;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
-
-
-/**
- * 指定这是一个操作数据库的mapper
- *
+/*
  * @author paida 派哒 zeyu.pzy@alibaba-inc.com
  */
-@Mapper
-public interface MVCMybatisDemoUserMapper {
-    MVCMybatisDemoUser queryUserInfo(String id);
+
+//@Controller可以标记此类为Controller类
+@Controller
+public class GreetingThymeleafController {
+
+    //	@GetMapping用于声明/greeting映射到这个函数
+	@GetMapping("/greeting2")
+	public String greeting2(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
+
+		//model中的"name"属性会在模板中显示出来
+		model.addAttribute("name", name);
+
+		return "greeting2";
+	}
+
 }

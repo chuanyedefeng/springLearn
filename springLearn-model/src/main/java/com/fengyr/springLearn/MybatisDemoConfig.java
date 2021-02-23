@@ -14,29 +14,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.fengyr.springLearn.demos;
+package com.fengyr.springLearn;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.mybatis.spring.annotation.MapperScan;
 
-/*
- * @author paida 派哒 zeyu.pzy@alibaba-inc.com
+/**
+ * 使用MapperScan批量扫描所有的Mapper接口
+ *
+ * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
  */
-
-//@Controller可以标记此类为Controller类
-@Controller
-public class GreetingThymeleafController {
-
-    //	@GetMapping用于声明/greeting映射到这个函数
-	@GetMapping("/greeting2")
-	public String greeting2(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-
-		//model中的"name"属性会在模板中显示出来
-		model.addAttribute("name", name);
-
-		return "greeting2";
-	}
+@MapperScan("com.fengyr.springLearn.mybatis")
+public class MybatisDemoConfig {
 
 }

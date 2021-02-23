@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.fengyr.springLearn.demos.web;
+package com.fengyr.springLearn.mybatis.entity;
 
 /**
  * @author <a href="mailto:chenxilzx1@gmail.com">theonefx</a>
